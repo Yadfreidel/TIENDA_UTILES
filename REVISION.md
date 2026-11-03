@@ -1,3 +1,9 @@
+# Estado actual: solo HTML
+
+Por petición del usuario, se retiraron CSS, JavaScript y las restricciones del formulario. El formulario usa novalidate y un botón desactivado. No cumple el apartado required y validaciones adicionales de la rúbrica. Las comprobaciones de diseño y formulario que aparecen abajo corresponden a versiones anteriores; no describen esta versión. La publicación sigue pendiente.
+
+---
+
 # Revisión del 3 de noviembre de 2026
 
 Se contrastó la versión simplificada con la tarea y la rúbrica completas pegadas por el usuario en el chat. Esta revisión reemplaza las observaciones sobre el diseño anterior.

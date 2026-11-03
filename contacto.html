@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contacto y solicitud | Tienda de Útiles Escolares</title>
         <meta name="description" content="Formulario académico para practicar una consulta sobre útiles escolares sin enviar ni almacenar datos.">
-        <link rel="stylesheet" href="estilos.css">
     </head>
     <body>
         <header>
@@ -33,22 +32,21 @@
             </section>
             <section id="solicitud">
                 <h2>Practica una solicitud</h2>
-                <p id="aviso">Demostración académica: el formulario no envía ni almacena datos. Usa datos de prueba y no adjuntes documentos personales.</p>
-                <form aria-describedby="aviso">
+                <p id="aviso">Demostración académica sin validaciones. El botón está desactivado porque el sitio no envía ni almacena datos. Usa datos de prueba y no adjuntes documentos personales.</p>
+                <form novalidate aria-describedby="aviso">
                     <fieldset>
                         <legend>Datos para la consulta</legend>
-                        <label for="nombre">Nombre de prueba (obligatorio)</label>
-                        <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="80" autocomplete="off">
-                        <label for="correo">Correo de prueba (obligatorio)</label>
-                        <input type="email" id="correo" name="correo" required autocomplete="off">
-                        <label for="telefono">Teléfono de prueba (opcional)</label>
-                        <input type="tel" id="telefono" name="telefono" pattern="[0-9+() .-]{7,20}" aria-describedby="ayuda-telefono">
-                        <small id="ayuda-telefono">De 7 a 20 caracteres: números, espacios, +, paréntesis, puntos o guiones.</small>
+                        <label for="nombre">Nombre de prueba</label>
+                        <input type="text" id="nombre" name="nombre">
+                        <label for="correo">Correo de prueba</label>
+                        <input type="email" id="correo" name="correo">
+                        <label for="telefono">Teléfono de prueba</label>
+                        <input type="tel" id="telefono" name="telefono">
                     </fieldset>
                     <fieldset>
                         <legend>Útiles que necesitas</legend>
-                        <label for="producto">Producto (obligatorio)</label>
-                        <select id="producto" name="producto" required>
+                        <label for="producto">Producto</label>
+                        <select id="producto" name="producto">
                             <option value="">Selecciona un producto</option>
                             <optgroup label="Escritura">
                                 <option value="cuaderno">Cuaderno</option>
@@ -60,43 +58,34 @@
                                 <option value="regla">Regla</option>
                             </optgroup>
                         </select>
-                        <label for="cantidad">Cantidad para la consulta (de 1 a 100)</label>
-                        <input type="number" id="cantidad" name="cantidad" required min="1" max="100" step="1">
-                        <label for="fecha">Fecha deseada para preparar tus materiales (opcional)</label>
+                        <label for="cantidad">Cantidad para la consulta</label>
+                        <input type="number" id="cantidad" name="cantidad">
+                        <label for="fecha">Fecha deseada para preparar tus materiales</label>
                         <input type="date" id="fecha" name="fecha">
-                        <label for="hora">Hora deseada (opcional)</label>
+                        <label for="hora">Hora deseada</label>
                         <input type="time" id="hora" name="hora">
-                        <label for="archivo">Lista escolar de prueba (opcional)</label>
-                        <input type="file" id="archivo" name="archivo" accept=".txt,.pdf,image/*">
-                        <p>Tipo de consulta (obligatorio)</p>
-                        <p class="opcion">
-                            <input type="radio" id="uso" name="consulta" value="uso" required>
+                        <label for="archivo">Lista escolar de prueba</label>
+                        <input type="file" id="archivo" name="archivo">
+                        <p>Tipo de consulta</p>
+                        <p>
+                            <input type="radio" id="uso" name="consulta" value="uso">
                             <label for="uso">Uso del producto</label>
                         </p>
-                        <p class="opcion">
-                            <input type="radio" id="organizacion" name="consulta" value="organizacion" required>
+                        <p>
+                            <input type="radio" id="organizacion" name="consulta" value="organizacion">
                             <label for="organizacion">Organización de materiales</label>
                         </p>
-                        <label for="mensaje">Describe tu consulta (obligatorio, mínimo 10 caracteres)</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" required minlength="10" maxlength="1000">
+                        <label for="mensaje">Describe tu consulta</label>
+                        <textarea id="mensaje" name="mensaje" rows="4">
                         </textarea>
-                        <p class="opcion">
-                            <input type="checkbox" id="demostracion" name="demostracion" required>
-                            <label for="demostracion">Entiendo que esta es una demostración académica (obligatorio).</label>
+                        <p>
+                            <input type="checkbox" id="demostracion" name="demostracion">
+                            <label for="demostracion">Entiendo que esta es una demostración académica.</label>
                         </p>
                     </fieldset>
-                    <button type="submit">Comprobar campos</button>
-                    <p id="resultado" role="status">
-                    </p>
+                    <button type="submit" disabled>Enviar (demostración)</button>
                 </form>
             </section>
-            <script>
-        // El navegador valida primero; este evento solo ocurre si los campos son válidos.
-        document.querySelector('form').addEventListener('submit', function (evento) {
-            evento.preventDefault();
-            document.getElementById('resultado').textContent = 'Los campos cumplen la validación del navegador. No se envió ni almacenó información.';
-        });
-    </script>
         </main>
         <footer>
             <p>
