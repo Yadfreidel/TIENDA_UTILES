@@ -1,10 +1,10 @@
-Tienda de ?tiles Escolares
-Proyecto acad?mico de Yadfreidel Victoria Lugo | Matr?cula: 2023-4137
+Tienda de Útiles Escolares
+Proyecto académico de Yadfreidel Victoria Lugo | Matrícula: 2023-4137
 
 Cuadernos: Sirven para tomar apuntes y organizar ideas.
-L?pices: Se utilizan para escribir y dibujar con grafito.
-Borradores: Permiten corregir trazos de l?piz.
+Lápices: Se utilizan para escribir y dibujar con grafito.
+Borradores: Permiten corregir trazos de lápiz.
 Mochilas: Ayudan a transportar los materiales de clase.
-Reglas: Sirven para medir y trazar l?neas rectas.
+Reglas: Sirven para medir y trazar líneas rectas.
 
 Sin precios ni disponibilidad confirmados. No se realizan ventas.

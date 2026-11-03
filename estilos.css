@@ -1,4 +1,4 @@
-/* Base y distribuci?n */
+/* Base y distribución */
 * { box-sizing: border-box; }
 body { margin: 0; background: #f3f6fa; color: #24354b; font: 16px/1.6 Arial, sans-serif; }
 header, footer { background: #16324f; color: white; padding: 28px max(20px, calc((100% - 1040px) / 2)); }
@@ -24,7 +24,7 @@ aside { border-left: 5px solid #e8aa35; }
 summary { cursor: pointer; font-weight: bold; }
 mark { background: #ffedba; }
 blockquote { margin: 20px 0; padding-left: 18px; border-left: 4px solid #e8aa35; }
-/* Tabla: el contenedor permite desplazarse en m?vil */
+/* Tabla: el contenedor permite desplazarse en móvil */
 .tabla { overflow-x: auto; }
 table { width: 100%; min-width: 560px; border-collapse: collapse; }
 caption { text-align: left; font-weight: bold; padding-bottom: 12px; }
