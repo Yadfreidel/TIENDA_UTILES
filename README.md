@@ -16,7 +16,7 @@ Estas justificaciones son un borrador: revísalas y adáptalas con tus palabras.
 | Encabezados y párrafos | Presentación, catálogo y contacto | `h1`, `h2`, `h3`, `p` | Ordenan el contenido: título principal, secciones y subsecciones sin saltos. |
 | Texto, citas y código | Inicio | `strong`, `em`, `mark`, `abbr`, `small`, `q`, `code`, `kbd`, `time`, `blockquote`, `cite` | Destacan importancia, énfasis, un aviso, una abreviatura, información secundaria, el lema propio, un nombre de archivo, una tecla y una fecha. La cita reproduce una frase verificada del documento HTML Living Standard; cite identifica ese documento. |
 | Listas | Catálogo y guía | `ul`, `ol`, `li`, `dl`, `dt`, `dd` | Agrupan productos, ordenan pasos y definen palabras del tema. |
-| Enlaces | Menús y contacto | `a` | Permiten ir a otras páginas, saltar al formulario, descargar el catálogo y consultar una fuente externa. Los enlaces mailto y tel están pendientes. |
+| Enlaces | Menús y contacto | `a` | Permiten ir a otras páginas, saltar al formulario, descargar el catálogo, consultar una fuente externa y abrir el correo o la aplicación de llamadas con mailto y tel. |
 | Imágenes y multimedia | Inicio y catálogo | `img`, `figure`, `figcaption`, `iframe` | Muestran ilustraciones, su explicación y una guía local incrustada. Audio/video y source están pendientes. |
 | Tablas | Catálogo, usos de productos | `table`, `caption`, `thead`, `tbody`, `tfoot`, `tr`, `th`, `td` | Relacionan productos con usos y áreas. `scope` identifica encabezados; `rowspan` reúne tres áreas iguales y `colspan` extiende la nota final. |
 | Formularios | Contacto, solicitud | `form`, `fieldset`, `legend`, `label`, `input`, `select`, `optgroup`, `option`, `textarea`, `button` | Agrupan datos relacionados y permiten practicar una consulta con etiquetas y validación del navegador. |
@@ -31,7 +31,6 @@ Estas justificaciones son un borrador: revísalas y adáptalas con tus palabras.
 ## Pendientes reales
 
 - No se recibieron los dos HTML de instrucciones y autoevaluación mencionados. La lista disponible es la consigna pegada en el chat; falta contrastar los documentos originales.
-- Confirmar correo y teléfono autorizados para completar el contacto y los enlaces `mailto:` y `tel:`. No se han añadido enlaces ficticios.
 - Recibir audio o video educativo y añadir `audio` o `video`, `controls` y `source` con el tipo MIME correcto. El iframe no cubre este requisito.
 - La portada usa los ocho recursos de texto pedidos, un lema propio identificado como tal y una cita externa verificada con `blockquote` y `cite`.
 - No se dispone de un sitio publicado ni de un repositorio remoto. No hay direcciones de entrega confirmadas.

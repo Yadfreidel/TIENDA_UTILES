@@ -16,9 +16,9 @@ Se contrastó el sitio con la consigna pegada por el usuario. Los dos HTML de ta
 | Datos de productos sin precios ni existencias inventados | Comprobado: solo usos generales |
 | Iframe relacionado, con title y fuente que permite incrustación | Comprobado en navegador; guía local |
 | Audio/video con controls y source | Pendiente: falta material confirmado |
-| Address con datos confirmados | Responsable y matrícula incluidos; correo y teléfono pendientes |
+| Address con datos confirmados | Comprobado: responsable, matrícula, correo y teléfono proporcionados por el usuario |
 | Enlaces externo seguro, ancla interna y descarga de archivo real | Comprobado |
-| Enlaces mailto y tel | Pendientes: faltan los datos reales |
+| Enlaces mailto y tel | Comprobado: destinos coinciden con el correo y teléfono proporcionados |
 | Formulario: dos fieldset/legend y siete tipos de input pedidos | Comprobado; además radio y checkbox |
 | Radios con name común, select/optgroup, textarea, submit | Comprobado |
 | Labels asociados, nombres de campos, ids únicos, required y validaciones adicionales | Comprobado; minlength, maxlength, min, max y pattern |
@@ -37,7 +37,7 @@ Se enviaron los documentos finales mediante POST a `https://validator.w3.org/nu/
 - `contacto.html`: lista de mensajes vacía; sin errores ni advertencias.
 - `guia.html`: lista de mensajes vacía; sin errores ni advertencias.
 
-Las respuestas JSON están guardadas en los archivos `validacion-*.html.json`. Validar la sintaxis no significa que todos los requisitos de la rúbrica estén completos: faltan los datos de contacto y el audio/video.
+Las respuestas JSON están guardadas en los archivos `validacion-*.html.json`. Validar la sintaxis no significa que todos los requisitos de la rúbrica estén completos: falta el audio/video.
 
 ## Comprobaciones locales
 
