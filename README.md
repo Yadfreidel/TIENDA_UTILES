@@ -4,7 +4,7 @@ Proyecto académico de Yadfreidel Victoria Lugo, matrícula 2023-4137. Presenta 
 
 ## Decisiones de diseño
 
-Las páginas usan solo HTML, sin CSS ni JavaScript. El navegador muestra sus estilos predeterminados. El formulario no tiene restricciones de validación y su botón está desactivado para evitar envíos. Las imágenes y el audio son archivos locales.
+Las páginas usan solo HTML, sin CSS ni JavaScript. El navegador muestra sus estilos predeterminados. El formulario no tiene restricciones de validación y su botón está desactivado para evitar envíos. Las imágenes son archivos locales.
 
 ## Etiquetas utilizadas
 
@@ -17,7 +17,7 @@ Estas justificaciones son un borrador: revísalas y adáptalas con tus palabras.
 | Texto, citas y código | Inicio, presentación y novedad; pie de las tres páginas | `strong`, `em`, `mark`, `abbr`, `small`, `q`, `code`, `kbd`, `blockquote`, `cite` | Destaco ideas importantes, explico HTML, marco una tecla y distingo una cita de mi propio texto. |
 | Listas | Catálogo y guía | `ul`, `ol`, `li`, `dl`, `dt`, `dd` | Agrupan productos, ordenan pasos y definen palabras del tema. |
 | Enlaces | Menús y contacto | `a` | Permiten ir a otras páginas, saltar al formulario, descargar el catálogo, consultar una fuente externa y abrir el correo o la aplicación de llamadas con mailto y tel. |
-| Imágenes y multimedia | Inicio y catálogo, materiales y guía | `img`, `figure`, `figcaption`, `iframe`, `audio`, `source` | Muestro los útiles con una explicación, una guía dentro de un marco y un audio con controles. |
+| Imágenes y multimedia | Inicio y catálogo, materiales y guía | `img`, `figure`, `figcaption`, `iframe` | Muestro los útiles con una explicación y una guía dentro de un marco. |
 | Tablas | Catálogo, usos de productos | `table`, `caption`, `thead`, `tbody`, `tfoot`, `tr`, `th`, `td` | Relacionan productos con usos y áreas. `scope` identifica encabezados; `rowspan` reúne tres áreas iguales y `colspan` extiende la nota final. |
 | Formularios | Contacto, solicitud | `form`, `fieldset`, `legend`, `label`, `input`, `select`, `optgroup`, `option`, `textarea`, `button` | Agrupan datos relacionados y permiten practicar una consulta con etiquetas visibles y sin validación. |
 | Semántica y div/span | Las tres páginas; novedad y aviso en Inicio, contacto y tabla | `header`, `nav`, `main`, `footer`, `section`, `article`, `aside`, `time`, `details`, `summary`, `address` | Cada etiqueta indica qué función tiene el contenido. No necesito div ni span. |
@@ -36,7 +36,7 @@ Estas justificaciones son un borrador: revísalas y adáptalas con tus palabras.
 
 ## Validación y publicación
 
-El archivo `REVISION.md` registra las comprobaciones realizadas y sus límites.
+El audio se retiró por petición del estudiante. El requisito de audio o video con controles queda pendiente.
 
 Para validar manualmente, entra en https://validator.w3.org/, elige **Validate by File Upload**, selecciona cada uno de los tres HTML y pulsa **Check**. Corrige todos los errores y repite. También revisa `guia.html`. La validación HTML no comprueba que todos los enlaces o contenidos multimedia funcionen.
 
