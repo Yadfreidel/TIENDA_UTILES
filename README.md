@@ -4,7 +4,7 @@ Proyecto académico de Yadfreidel Victoria Lugo, matrícula 2023-4137. Presenta 
 
 ## Decisiones de diseño
 
-Las tres páginas comparten `estilos.css`: fondo claro, encabezado azul oscuro y acento amarillo. Las tarjetas se colocan en una columna en pantallas de hasta 700 px. La tabla tiene un contenedor desplazable. El foco del teclado y el estado al pasar el cursor son visibles. Las ilustraciones SVG son locales, creadas para el proyecto y no representan productos comerciales concretos.
+Las tres páginas comparten un CSS pequeño: fondo blanco, letra Arial y contenido en una columna. La tabla tiene bordes y un contenedor desplazable. No hay tarjetas, columnas ni frameworks. Las ilustraciones SVG son locales y no representan modelos comerciales concretos. El audio es una narración sintética de Windows creada para el proyecto; su transcripción aparece en el catálogo.
 
 ## Etiquetas utilizadas
 
@@ -12,15 +12,15 @@ Estas justificaciones son un borrador: revísalas y adáptalas con tus palabras.
 
 | Familia | Página y sección | Etiquetas usadas | ¿Por qué esa etiqueta? |
 | --- | --- | --- | --- |
-| Cimientos | Las tres páginas | `html`, `head`, `meta`, `title`, `link`, `body` y declaración DOCTYPE | Identifican un documento HTML, su idioma, codificación, título y hoja de estilos. |
+| Cimientos | Las tres páginas, estructura inicial | DOCTYPE, `html`, `head`, `meta`, `title`, `link`, `body` | Indican el idioma, el título y cómo debe leer el navegador el documento. |
 | Encabezados y párrafos | Presentación, catálogo y contacto | `h1`, `h2`, `h3`, `p` | Ordenan el contenido: título principal, secciones y subsecciones sin saltos. |
-| Texto, citas y código | Inicio | `strong`, `em`, `mark`, `abbr`, `small`, `q`, `code`, `kbd`, `time`, `blockquote`, `cite` | Destacan importancia, énfasis, un aviso, una abreviatura, información secundaria, el lema propio, un nombre de archivo, una tecla y una fecha. La cita reproduce una frase verificada del documento HTML Living Standard; cite identifica ese documento. |
+| Texto, citas y código | Inicio, presentación y novedad; pie de las tres páginas | `strong`, `em`, `mark`, `abbr`, `small`, `q`, `code`, `kbd`, `blockquote`, `cite` | Destaco ideas importantes, explico HTML, marco una tecla y distingo una cita de mi propio texto. |
 | Listas | Catálogo y guía | `ul`, `ol`, `li`, `dl`, `dt`, `dd` | Agrupan productos, ordenan pasos y definen palabras del tema. |
 | Enlaces | Menús y contacto | `a` | Permiten ir a otras páginas, saltar al formulario, descargar el catálogo, consultar una fuente externa y abrir el correo o la aplicación de llamadas con mailto y tel. |
-| Imágenes y multimedia | Inicio y catálogo | `img`, `figure`, `figcaption`, `iframe` | Muestran ilustraciones, su explicación y una guía local incrustada. Audio/video y source están pendientes. |
+| Imágenes y multimedia | Inicio y catálogo, materiales y guía | `img`, `figure`, `figcaption`, `iframe`, `audio`, `source` | Muestro los útiles con una explicación, una guía dentro de un marco y un audio con controles. |
 | Tablas | Catálogo, usos de productos | `table`, `caption`, `thead`, `tbody`, `tfoot`, `tr`, `th`, `td` | Relacionan productos con usos y áreas. `scope` identifica encabezados; `rowspan` reúne tres áreas iguales y `colspan` extiende la nota final. |
 | Formularios | Contacto, solicitud | `form`, `fieldset`, `legend`, `label`, `input`, `select`, `optgroup`, `option`, `textarea`, `button` | Agrupan datos relacionados y permiten practicar una consulta con etiquetas y validación del navegador. |
-| Semántica y div/span | Las tres páginas | `header`, `nav`, `main`, `footer`, `section`, `article`, `aside`, `details`, `summary`, `address`, `div` | Describen la función del contenido. Los div solo agrupan la bienvenida, las tarjetas o la tabla para aplicar estilos. No se utiliza span. |
+| Semántica y div/span | Las tres páginas; novedad y aviso en Inicio, contacto y tabla | `header`, `nav`, `main`, `footer`, `section`, `article`, `aside`, `time`, `details`, `summary`, `address`, `div` | Cada etiqueta indica qué función tiene el contenido. Solo uso un div para poder desplazar la tabla. No necesito span. |
 
 ## Para explicarlo en clase
 
@@ -30,9 +30,7 @@ Estas justificaciones son un borrador: revísalas y adáptalas con tus palabras.
 
 ## Pendientes reales
 
-- No se recibieron los dos HTML de instrucciones y autoevaluación mencionados. La lista disponible es la consigna pegada en el chat; falta contrastar los documentos originales.
-- Recibir audio o video educativo y añadir `audio` o `video`, `controls` y `source` con el tipo MIME correcto. El iframe no cubre este requisito.
-- La portada usa los ocho recursos de texto pedidos, un lema propio identificado como tal y una cita externa verificada con `blockquote` y `cite`.
+- La revisión actual utiliza la tarea y la rúbrica completas pegadas en el chat.
 - No se dispone de un sitio publicado ni de un repositorio remoto. No hay direcciones de entrega confirmadas.
 
 ## Validación y publicación

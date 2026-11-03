@@ -27,8 +27,12 @@ with sync_playwright() as p:
             if archivo == 'servicios.html':
                 pagina.locator('iframe').scroll_into_view_if_needed()
                 assert pagina.frame_locator('iframe').locator('h1').inner_text() == 'Antes de ir a clase'
-                if ancho == 390:
-                    assert pagina.locator('.tarjetas').evaluate('(e) => getComputedStyle(e).gridTemplateColumns.split(" ").length') == 1
+                pagina.locator('audio').evaluate('(audio) => audio.load()')
+                pagina.wait_for_function('document.querySelector("audio").readyState >= 1')
+                assert pagina.locator('audio').evaluate('(audio) => audio.duration > 0 && audio.controls && !audio.autoplay')
+                pagina.locator('audio').evaluate('(audio) => audio.play()')
+                pagina.wait_for_function('document.querySelector("audio").currentTime > 0')
+                pagina.locator('audio').evaluate('(audio) => audio.pause()')
             if archivo == 'index.html':
                 pagina.locator('summary').click()
                 assert pagina.locator('details').get_attribute('open') is not None
@@ -58,6 +62,6 @@ with sync_playwright() as p:
         pagina.get_by_text('Descargar catálogo de texto').click()
     assert descarga.value.suggested_filename == 'catalogo.txt'
     assert not errores, errores
-    print('OK: escritorio/movil, imagenes, iframe, detalles, validacion, bloqueo de envio y descarga.')
+    print('OK: escritorio/movil, imagenes, iframe, audio reproducible, detalles, validacion, bloqueo de envio y descarga.')
     navegador.close()
 servidor.shutdown()

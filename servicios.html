@@ -1,61 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de útiles | Tienda de Útiles Escolares</title>
-    <meta name="description" content="Catálogo educativo de cinco útiles escolares, sus usos y una guía para solicitar información.">
-    <link rel="stylesheet" href="estilos.css">
-</head>
-<body>
-<header>
-    <h1>Catálogo de útiles</h1>
-    <p>Útiles para el día a día en clase · Proyecto académico</p>
-    <nav aria-label="Menú principal"><a href="index.html">Inicio</a>
-<a href="servicios.html" aria-current="page">Servicios</a>
-<a href="contacto.html">Contacto</a></nav>
-</header>
-<main>
-    <section>
-        <h2>Materiales para tus clases</h2>
-        <p>Ilustraciones orientativas creadas para esta tarea; no representan modelos comerciales ni existencias.</p>
-        <div class="tarjetas"><article><img src="imagenes/cuadernos.svg" alt="Ilustración de cuadernos" width="360" height="250"><h3>Cuadernos</h3><p>Sirven para tomar apuntes y organizar ideas.</p></article>
-<article><img src="imagenes/lapices.svg" alt="Ilustración de lápices" width="360" height="250"><h3>Lápices</h3><p>Se utilizan para escribir y dibujar con grafito.</p></article>
-<article><img src="imagenes/borradores.svg" alt="Ilustración de borradores" width="360" height="250"><h3>Borradores</h3><p>Permiten corregir trazos de lápiz.</p></article>
-<article><img src="imagenes/mochilas.svg" alt="Ilustración de mochilas" width="360" height="250"><h3>Mochilas</h3><p>Ayudan a transportar los materiales de clase.</p></article>
-<article><img src="imagenes/reglas.svg" alt="Ilustración de reglas" width="360" height="250"><h3>Reglas</h3><p>Sirven para medir y trazar líneas rectas.</p></article></div>
-    </section>
-    <section>
-        <h2>Organiza tu solicitud</h2>
-        <ul><li>Escritura y corrección<ul><li>Lápices</li><li>Borradores</li></ul></li><li>Apuntes: cuadernos</li><li>Transporte: mochilas</li><li>Medición: reglas</li></ul>
-        <h3>Pasos para preparar una consulta</h3>
-        <ol start="1"><li>Revisa los útiles del catálogo.</li><li>Elige el producto y la cantidad que necesitas.</li><li>Practica con el formulario académico de contacto.</li></ol>
-        <h3>Palabras del catálogo</h3>
-        <dl><dt>Grafito</dt><dd>Material utilizado en la mina de muchos lápices.</dd><dt>Apunte</dt><dd>Nota escrita para recordar una explicación.</dd><dt>Medición</dt><dd>Comparación de una longitud con una unidad.</dd></dl>
-    </section>
-    <section>
-        <h2>Usos de los productos</h2>
-        <div class="tabla" role="region" aria-label="Tabla de útiles escolares" tabindex="0">
-        <table>
-            <caption>Cinco útiles y sus funciones generales</caption>
-            <thead><tr><th scope="col">Producto</th><th scope="col">Uso general</th><th scope="col">Área de uso</th></tr></thead>
-            <tbody>
-                <tr><th scope="row">Cuadernos</th><td>Tomar apuntes</td><td rowspan="3">Escritura y corrección</td></tr>
-                <tr><th scope="row">Lápices</th><td>Escribir con grafito</td></tr>
-                <tr><th scope="row">Borradores</th><td>Borrar trazos de lápiz</td></tr>
-                <tr><th scope="row">Mochilas</th><td>Transportar materiales</td><td>Organización</td></tr>
-                <tr><th scope="row">Reglas</th><td>Medir longitudes</td><td>Medición</td></tr>
-            </tbody>
-            <tfoot><tr><th scope="row">Nota</th><td colspan="2">Sin precios ni disponibilidad confirmados.</td></tr></tfoot>
-        </table></div>
-    </section>
-    <section>
-        <h2>Guía visual de estudio</h2>
-        <p>Este marco muestra una guía local que se puede abrir también <a href="guia.html">en una página independiente</a>.</p>
-        <iframe src="guia.html" title="Guía para preparar los útiles antes de clase" loading="lazy"></iframe>
-        <p><strong>Pendiente:</strong> incorporar un audio o video educativo confirmado con controles y su elemento source. Este marco no sustituye ese requisito.</p>
-    </section>
-</main>
-<footer><p><small>Yadfreidel Victoria Lugo | Matrícula: 2023-4137.</small></p></footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catálogo de útiles | Tienda de Útiles Escolares</title>
+        <meta name="description" content="Catálogo educativo de cinco útiles escolares, sus usos y una guía para solicitar información.">
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+    <body>
+        <header>
+            <h1>Catálogo de útiles</h1>
+            <p>Útiles para el día a día en clase · Proyecto académico</p>
+            <nav aria-label="Menú principal">
+                <a href="index.html">Inicio</a>
+                <a href="servicios.html" aria-current="page">Servicios</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Materiales para tus clases</h2>
+                <p>Ilustraciones orientativas creadas para esta tarea; no representan modelos comerciales ni existencias.</p>
+                <figure>
+                    <img src="imagenes/cuadernos.svg" alt="Cuaderno azul con líneas blancas en la portada" width="360" height="250">
+                    <figcaption>Cuaderno para tomar apuntes. Ilustración del proyecto.</figcaption>
+                </figure>
+                <figure>
+                    <img src="imagenes/lapices.svg" alt="Lápiz amarillo con punta oscura y borrador rosado" width="360" height="250">
+                    <figcaption>Lápiz para escribir y dibujar. Ilustración del proyecto.</figcaption>
+                </figure>
+            </section>
+            <section>
+                <h2>Organiza tu solicitud</h2>
+                <ul>
+                    <li>Escritura y corrección<ul>
+                            <li>Lápices</li>
+                            <li>Borradores</li>
+                        </ul>
+                    </li>
+                    <li>Apuntes: cuadernos</li>
+                    <li>Transporte: mochilas</li>
+                    <li>Medición: reglas</li>
+                </ul>
+                <h3>Pasos para preparar una consulta</h3>
+                <ol start="1">
+                    <li>Revisa los útiles del catálogo.</li>
+                    <li>Elige el producto y la cantidad que necesitas.</li>
+                    <li>Practica con el formulario académico de contacto.</li>
+                </ol>
+                <h3>Palabras del catálogo</h3>
+                <dl>
+                    <dt>Grafito</dt>
+                    <dd>Material utilizado en la mina de muchos lápices.</dd>
+                    <dt>Apunte</dt>
+                    <dd>Nota escrita para recordar una explicación.</dd>
+                    <dt>Medición</dt>
+                    <dd>Comparación de una longitud con una unidad.</dd>
+                </dl>
+            </section>
+            <section>
+                <h2>Usos de los productos</h2>
+                <div class="tabla" role="region" aria-label="Tabla de útiles escolares" tabindex="0">
+                    <table>
+                        <caption>Cinco útiles y sus funciones generales</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Uso general</th>
+                                <th scope="col">Área de uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Cuadernos</th>
+                                <td>Tomar apuntes</td>
+                                <td rowspan="3">Escritura y corrección</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Lápices</th>
+                                <td>Escribir con grafito</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Borradores</th>
+                                <td>Borrar trazos de lápiz</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Mochilas</th>
+                                <td>Transportar materiales</td>
+                                <td>Organización</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Reglas</th>
+                                <td>Medir longitudes</td>
+                                <td>Medición</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row">Nota</th>
+                                <td colspan="2">Sin precios ni disponibilidad confirmados.</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+            <section>
+                <h2>Guía visual de estudio</h2>
+                <p>Este marco muestra una guía local que se puede abrir también <a href="guia.html">en una página independiente</a>.</p>
+                <iframe src="guia.html" title="Guía para preparar los útiles antes de clase" loading="lazy">
+                </iframe>
+                <h3>Audio sobre los útiles</h3>
+                <p>Guía breve del proyecto, narrada con voz sintética de Windows.</p>
+                <audio controls preload="metadata">
+                    <source src="multimedia/utiles.wav" type="audio/wav">
+                    Tu navegador no reproduce este audio. <a href="multimedia/utiles.wav">Descarga la guía en audio</a>.
+                </audio>
+                <p>Transcripción: Los cuadernos sirven para tomar apuntes. Los lápices permiten escribir y dibujar. Los borradores corrigen trazos de lápiz. Las mochilas ayudan a transportar los materiales. Las reglas sirven para medir y trazar líneas rectas.</p>
+            </section>
+        </main>
+        <footer>
+            <p>
+                <small>Yadfreidel Victoria Lugo | Matrícula: 2023-4137.</small>
+            </p>
+        </footer>
+    </body>
 </html>
