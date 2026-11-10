@@ -382,7 +382,17 @@ function validarFormulario(event) {
         limpiarError(campoProducto);
     }
 
-    // Regla 6 (propia): la fecha no puede estar en el pasado
+    // Regla 6: la cantidad es opcional, pero si se escribe debe ir de 1 a 50
+    // (los mismos límites que los atributos min y max del HTML)
+    if (campoCantidad.value === "") {
+        limpiarError(campoCantidad);
+    } else if (Number(campoCantidad.value) < 1 || Number(campoCantidad.value) > 50) {
+        mostrarError(campoCantidad, "La cantidad debe estar entre 1 y 50.");
+    } else {
+        limpiarError(campoCantidad);
+    }
+
+    // Regla 7 (propia): la fecha no puede estar en el pasado
     if (campoFecha.value === "") {
         mostrarError(campoFecha, "Elige una fecha.");
     } else if (esFechaPasada(campoFecha.value)) {
@@ -407,11 +417,11 @@ function validarFormulario(event) {
 if (formulario && mensajeExito) {
     formulario.addEventListener("submit", validarFormulario);
 
-    // Lista con los campos obligatorios
-    const camposObligatorios = [campoNombre, campoCorreo, campoConfirmar, campoTelefono, campoProducto, campoFecha];
+    // Lista con los campos que tienen validación
+    const camposValidados = [campoNombre, campoCorreo, campoConfirmar, campoTelefono, campoProducto, campoCantidad, campoFecha];
 
     // Cuando la persona corrige un campo, su error desaparece
-    camposObligatorios.forEach(function (campo) {
+    camposValidados.forEach(function (campo) {
         campo.addEventListener("input", function () {
             limpiarError(campo);
         });

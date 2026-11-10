@@ -44,7 +44,12 @@
     --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
 
     /* Ancho máximo del contenido */
-    --ancho-maximo: 1100px;
+    --ancho-maximo: 1400px;
+
+    /* Fondo detrás de las ilustraciones. Es el mismo color que traen
+       los SVG, así el espacio sobrante no se nota. No cambia en modo
+       oscuro porque las ilustraciones siempre son claras. */
+    --color-fondo-imagen: #eef4f8;
 }
 
 
@@ -209,13 +214,15 @@ kbd {
    ---------------------------------------------------------
    Cómo se reparte el espacio de la página. */
 
-/* El contenido principal crece (flex: 1) para empujar el footer abajo */
+/* El contenido principal crece (flex: 1) para empujar el footer abajo.
+   Ocupa todo el ancho (100%) hasta un máximo de 1400px, centrado
+   con margin auto y con 32px (2rem) de espacio a cada lado. */
 main {
     flex: 1;
     width: 100%;
     max-width: var(--ancho-maximo);
     margin: 0 auto;
-    padding: var(--espacio-grande) var(--espacio);
+    padding: var(--espacio-grande);
 }
 
 /* Cada bloque del contenido parece una tarjeta blanca */
@@ -240,7 +247,7 @@ details {
     width: 100%;
     max-width: var(--ancho-maximo);
     margin: 0 auto;
-    padding: var(--espacio-grande) var(--espacio);
+    padding: var(--espacio-grande);
 }
 
 /* Dentro de la portada, main ya no necesita su propio margen ni ancho */
@@ -288,16 +295,15 @@ iframe {
 /* 6. Catálogo: filtros y tarjetas
    --------------------------------------------------------- */
 
-/* El buscador y el select uno al lado del otro */
+/* El buscador y el select en una sola fila con Grid:
+   el buscador mide el doble (2fr) que el select (1fr) */
 .filtros {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     gap: var(--espacio);
 }
 
 .filtro {
-    flex: 1;
-    min-width: 200px;
     margin: 0;
 }
 
@@ -314,11 +320,13 @@ iframe {
 }
 
 /* Grid de tarjetas: crea tantas columnas como quepan,
-   cada una de 220px como mínimo y repartiendo el resto (1fr) */
+   cada una de 220px como mínimo y repartiendo el resto (1fr).
+   auto-fill guarda las columnas aunque queden vacías: si el filtro
+   deja 1 producto, su tarjeta no se estira a todo el ancho. */
 .tarjetas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--espacio);
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
 }
 
 /* margin: 0 anula el margen de la regla "main article",
@@ -334,8 +342,34 @@ iframe {
     box-shadow: var(--sombra);
 }
 
+/* Todas las imágenes de las tarjetas miden lo mismo de alto.
+   object-fit: contain muestra la imagen completa sin deformarla. */
 .tarjeta img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
     border-radius: var(--radio);
+    background-color: var(--color-fondo-imagen);
+}
+
+/* Galería de "Materiales para tus clases" (servicios.html) */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.galeria figure {
+    margin: 0;
+}
+
+/* Imágenes de la galería con un alto máximo de 180px */
+.galeria img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: var(--radio);
+    background-color: var(--color-fondo-imagen);
 }
 
 .tarjeta h3 {
@@ -666,6 +700,17 @@ body.oscuro {
     details {
         padding: var(--espacio);
     }
+
+    /* Menos espacio a los lados en pantallas pequeñas */
+    main,
+    .portada {
+        padding: var(--espacio);
+    }
+
+    /* Buscador y select uno debajo del otro (una sola columna) */
+    .filtros {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Celulares pequeños (480px o menos) */
@@ -686,11 +731,6 @@ body.oscuro {
     main,
     .portada {
         padding: var(--espacio) 0.5rem;
-    }
-
-    /* Buscador y select uno debajo del otro */
-    .filtros {
-        flex-direction: column;
     }
 
     /* Una sola tarjeta por fila */

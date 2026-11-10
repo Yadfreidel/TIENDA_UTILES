@@ -45,7 +45,7 @@
                     <fieldset>
                         <legend>Datos para la consulta</legend>
                         <label for="nombre" class="requerido">Nombre de prueba</label>
-                        <input type="text" id="nombre" name="nombre" required aria-describedby="error-nombre">
+                        <input type="text" id="nombre" name="nombre" required minlength="3" aria-describedby="error-nombre">
                         <span class="error" id="error-nombre"></span>
                         <label for="correo" class="requerido">Correo de prueba</label>
                         <input type="email" id="correo" name="correo" required aria-describedby="error-correo">
@@ -54,7 +54,7 @@
                         <input type="email" id="confirmar-correo" name="confirmar-correo" required aria-describedby="error-confirmar-correo">
                         <span class="error" id="error-confirmar-correo"></span>
                         <label for="telefono" class="requerido">Teléfono de prueba (809, 829 u 849 y 7 dígitos)</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="8091234567" required aria-describedby="error-telefono">
+                        <input type="tel" id="telefono" name="telefono" placeholder="8091234567" required pattern="(809|829|849)[0-9]{7}" aria-describedby="error-telefono">
                         <span class="error" id="error-telefono"></span>
                     </fieldset>
                     <fieldset>
@@ -74,8 +74,9 @@
                             </optgroup>
                         </select>
                         <span class="error" id="error-producto"></span>
-                        <label for="cantidad">Cantidad para la consulta</label>
-                        <input type="number" id="cantidad" name="cantidad">
+                        <label for="cantidad">Cantidad para la consulta (de 1 a 50)</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="50" aria-describedby="error-cantidad">
+                        <span class="error" id="error-cantidad"></span>
                         <label for="fecha" class="requerido">Fecha deseada para preparar tus materiales</label>
                         <input type="date" id="fecha" name="fecha" required aria-describedby="error-fecha">
                         <span class="error" id="error-fecha"></span>
