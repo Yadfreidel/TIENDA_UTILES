@@ -1,0 +1,713 @@
+/* =========================================================
+   Hoja de estilos de la Tienda de Útiles Escolares
+   Autora del proyecto: Yadfreidel Victoria Lugo (2023-4137)
+   Una sola hoja para todas las páginas.
+   ========================================================= */
+
+
+/* 1. Variables
+   ---------------------------------------------------------
+   Guardamos los colores, la fuente, los espacios y el radio
+   en un solo lugar. Luego los usamos con var(--nombre).
+   Si cambiamos un valor aquí, cambia en toda la página. */
+:root {
+    /* Colores (tomados de las ilustraciones del proyecto) */
+    --color-primario: #26749a;
+    --color-oscuro: #16324f;
+    --color-acento: #ffdc86;
+    --color-fondo: #f2f6f9;
+    --color-superficie: #ffffff;
+    --color-texto: #1d2b3a;
+    --color-texto-suave: #4a5d70;
+    --color-borde: #cfdbe5;
+    --color-fila: #eef4f8;
+    --color-error: #b3261e;
+    --color-exito: #1e7a3c;
+    --color-titulos: #16324f;
+    /* Color del texto que va encima del color primario (botones) */
+    --color-sobre-primario: #ffffff;
+
+    /* Colores del encabezado y del pie */
+    --color-encabezado: #26749a;
+    --color-texto-encabezado: #ffffff;
+    --color-pie: #16324f;
+
+    /* Fuente con respaldo: si no existe Poppins, usa Arial */
+    --fuente: "Poppins", Arial, sans-serif;
+
+    /* Espacios */
+    --espacio: 1rem;
+    --espacio-grande: 2rem;
+
+    /* Bordes redondeados y sombra */
+    --radio: 12px;
+    --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    /* Ancho máximo del contenido */
+    --ancho-maximo: 1100px;
+}
+
+
+/* 2. Base
+   ---------------------------------------------------------
+   Reglas generales para todas las etiquetas. */
+
+/* Hace que el padding y el borde se cuenten dentro del ancho */
+* {
+    box-sizing: border-box;
+}
+
+/* El body es una columna: header arriba, contenido, footer abajo */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fuente);
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+    color: var(--color-titulos);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+a {
+    color: var(--color-primario);
+}
+
+/* Las imágenes y marcos nunca son más anchos que su contenedor */
+img,
+iframe,
+video {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+figure {
+    margin: var(--espacio) 0;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: var(--color-texto-suave);
+}
+
+blockquote {
+    margin: var(--espacio) 0;
+    padding: var(--espacio);
+    border-left: 5px solid var(--color-acento);
+    background-color: var(--color-fila);
+    border-radius: var(--radio);
+}
+
+code,
+kbd {
+    padding: 0 0.3rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    background-color: var(--color-fila);
+}
+
+
+/* 3. Header y menú
+   ---------------------------------------------------------
+   Usamos Flexbox para poner el título, los botones y el menú
+   en una misma fila. */
+.encabezado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio);
+    padding: var(--espacio) var(--espacio-grande);
+    background-color: var(--color-encabezado);
+    color: var(--color-texto-encabezado);
+}
+
+/* La marca ocupa todo el espacio libre y empuja lo demás a la derecha */
+.marca {
+    flex: 1;
+}
+
+/* Selector descendiente: el h1 y el p que están DENTRO de .marca */
+.marca h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--color-texto-encabezado);
+}
+
+.marca p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.botones-encabezado {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* El menú: los tres enlaces en fila */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.menu a {
+    padding: 0.4rem 0.9rem;
+    border-radius: var(--radio);
+    color: var(--color-texto-encabezado);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Selector de atributo: el enlace de la página actual */
+.menu a[aria-current="page"] {
+    background-color: var(--color-acento);
+    color: var(--color-oscuro);
+}
+
+/* Botón de modo oscuro */
+.boton-tema {
+    padding: 0.4rem 0.9rem;
+    border: 2px solid var(--color-texto-encabezado);
+    border-radius: var(--radio);
+    background-color: transparent;
+    color: var(--color-texto-encabezado);
+    font-family: var(--fuente);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Botón hamburguesa: en escritorio no se ve (aparece en móvil) */
+.boton-menu {
+    display: none;
+    padding: 0.2rem 0.7rem;
+    border: 2px solid var(--color-texto-encabezado);
+    border-radius: var(--radio);
+    background-color: transparent;
+    color: var(--color-texto-encabezado);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+
+/* 4. Layout
+   ---------------------------------------------------------
+   Cómo se reparte el espacio de la página. */
+
+/* El contenido principal crece (flex: 1) para empujar el footer abajo */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+    padding: var(--espacio-grande) var(--espacio);
+}
+
+/* Cada bloque del contenido parece una tarjeta blanca */
+main section,
+main article,
+aside,
+details {
+    margin-bottom: var(--espacio-grande);
+    padding: var(--espacio-grande);
+    background-color: var(--color-superficie);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+/* Portada (index.html): main y aside en dos columnas con Grid.
+   La primera columna mide el doble que la segunda (2fr y 1fr). */
+.portada {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--espacio-grande);
+    width: 100%;
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+    padding: var(--espacio-grande) var(--espacio);
+}
+
+/* Dentro de la portada, main ya no necesita su propio margen ni ancho */
+.portada main {
+    padding: 0;
+}
+
+/* El aside se queda arriba de su columna y no se estira */
+.portada aside {
+    align-self: start;
+}
+
+details summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* El marco de la guía ocupa todo el ancho */
+iframe {
+    width: 100%;
+    height: 320px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+}
+
+
+/* 5. Botones
+   ---------------------------------------------------------
+   La clase .boton sirve para enlaces y para el botón de enviar. */
+.boton {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: var(--radio);
+    background-color: var(--color-primario);
+    color: var(--color-sobre-primario);
+    font-family: var(--fuente);
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* 6. Catálogo: filtros y tarjetas
+   --------------------------------------------------------- */
+
+/* El buscador y el select uno al lado del otro */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio);
+}
+
+.filtro {
+    flex: 1;
+    min-width: 200px;
+    margin: 0;
+}
+
+.contador {
+    font-weight: bold;
+    color: var(--color-texto-suave);
+}
+
+.sin-resultados {
+    padding: var(--espacio);
+    border-radius: var(--radio);
+    background-color: var(--color-fila);
+    text-align: center;
+}
+
+/* Grid de tarjetas: crea tantas columnas como quepan,
+   cada una de 220px como mínimo y repartiendo el resto (1fr) */
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--espacio);
+}
+
+/* margin: 0 anula el margen de la regla "main article",
+   porque cada tarjeta también es un <article> dentro de main */
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: var(--espacio);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    background-color: var(--color-superficie);
+    box-shadow: var(--sombra);
+}
+
+.tarjeta img {
+    border-radius: var(--radio);
+}
+
+.tarjeta h3 {
+    margin: 0.5rem 0 0;
+}
+
+.tarjeta p {
+    margin: 0.3rem 0;
+}
+
+.categoria {
+    font-size: 0.85rem;
+    color: var(--color-texto-suave);
+}
+
+/* margin-top: auto empuja el precio al fondo de la tarjeta.
+   Usamos ".tarjeta .precio" para que gane a ".tarjeta p" */
+.tarjeta .precio {
+    margin-top: auto;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+
+/* 7. Tabla
+   --------------------------------------------------------- */
+
+/* Si la tabla no cabe (en móvil), el contenedor hace scroll horizontal */
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: var(--radio);
+    background-color: var(--color-acento);
+    color: var(--color-oscuro);
+    font-weight: bold;
+}
+
+th,
+td {
+    padding: 0.6rem;
+    border: 1px solid var(--color-borde);
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--color-primario);
+    color: var(--color-sobre-primario);
+}
+
+/* Pseudoclase :nth-child(even): filas pares con otro color */
+tbody tr:nth-child(even) {
+    background-color: var(--color-fila);
+}
+
+tfoot {
+    font-style: italic;
+}
+
+
+/* 8. Formulario
+   --------------------------------------------------------- */
+fieldset {
+    margin-bottom: var(--espacio);
+    padding: var(--espacio);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+}
+
+legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+    color: var(--color-titulos);
+}
+
+/* Cada etiqueta en su propia línea, encima de su campo */
+label {
+    display: block;
+    margin-top: var(--espacio);
+    font-weight: bold;
+}
+
+/* Pseudoelemento ::after: agrega un asterisco rojo a los obligatorios */
+label.requerido::after {
+    content: " *";
+    color: var(--color-error);
+}
+
+/* Los campos ocupan todo el ancho */
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    margin-top: 0.3rem;
+    padding: 0.6rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    background-color: var(--color-superficie);
+    color: var(--color-texto);
+    font-family: var(--fuente);
+    font-size: 1rem;
+}
+
+/* Selector de atributo: los radio y checkbox NO ocupan todo el ancho */
+input[type="radio"],
+input[type="checkbox"] {
+    display: inline;
+    width: auto;
+    margin: 0 0.4rem 0 0;
+}
+
+/* Las etiquetas de radio y checkbox van en la misma línea que su casilla */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline;
+    font-weight: normal;
+}
+
+
+/* 9. Footer
+   --------------------------------------------------------- */
+footer {
+    padding: var(--espacio);
+    background-color: var(--color-pie);
+    color: #ffffff;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Botón "volver arriba": fijo en la esquina inferior derecha.
+   Empieza invisible; JavaScript le pone la clase .visible
+   cuando la persona baja por la página. */
+.boton-arriba {
+    position: fixed;
+    right: var(--espacio);
+    bottom: var(--espacio);
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-primario);
+    color: var(--color-sobre-primario);
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+
+.boton-arriba.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* 10. Estados visuales: hover, foco y transiciones
+   ---------------------------------------------------------
+   transition hace que el cambio sea suave y no de golpe. */
+
+/* Enlaces del menú: el fondo cambia suavemente al pasar el ratón */
+.menu a {
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* El enlace actual mantiene su color amarillo aunque pase el ratón */
+.menu a[aria-current="page"]:hover {
+    background-color: var(--color-acento);
+}
+
+/* Botones del encabezado */
+.boton-tema,
+.boton-menu {
+    transition: background-color 0.3s;
+}
+
+.boton-tema:hover,
+.boton-menu:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Botones normales: suben un poco al pasar el ratón */
+.boton {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra);
+}
+
+/* Tarjetas del catálogo: suben y su sombra crece */
+.tarjeta {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* :focus-visible se activa cuando llegamos con el teclado (Tab).
+   Muestra un borde grueso para saber dónde estamos. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 2px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-primario);
+    outline-offset: 1px;
+    border-color: var(--color-primario);
+}
+
+/* Campo con error: JavaScript le pone la clase .invalido */
+.invalido {
+    border: 2px solid var(--color-error);
+    background-color: var(--color-fila);
+}
+
+/* Texto del error debajo de cada campo */
+.error {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--color-error);
+}
+
+/* Mensaje de éxito del formulario */
+.mensaje-exito {
+    margin-top: var(--espacio);
+    padding: var(--espacio);
+    border: 2px solid var(--color-exito);
+    border-radius: var(--radio);
+    color: var(--color-texto);
+}
+
+/* :empty = cuando el div no tiene nada adentro, no se muestra */
+.mensaje-exito:empty {
+    display: none;
+}
+
+
+/* 11. Modo oscuro
+   ---------------------------------------------------------
+   JavaScript pone la clase "oscuro" en el body.
+   Aquí SOLO cambiamos los valores de las variables;
+   todas las reglas de arriba se actualizan solas. */
+body.oscuro {
+    --color-primario: #6cb8dc;
+    --color-sobre-primario: #0f1a24;
+    --color-fondo: #121a22;
+    --color-superficie: #1c2733;
+    --color-texto: #e4ecf2;
+    --color-texto-suave: #a9bac8;
+    --color-borde: #34495c;
+    --color-fila: #243241;
+    --color-error: #ff8a80;
+    --color-exito: #7ddc95;
+    --color-titulos: #cfe6f3;
+    --color-encabezado: #0f1a24;
+    --color-texto-encabezado: #e4ecf2;
+    --color-pie: #0b1218;
+    --sombra: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* 12. Media queries (diseño adaptable)
+   ---------------------------------------------------------
+   Las reglas de adentro solo se aplican cuando la pantalla
+   mide como máximo el ancho indicado. */
+
+/* Tabletas y celulares grandes (768px o menos) */
+@media (max-width: 768px) {
+    /* La portada pasa de dos columnas a una: el aside baja */
+    .portada {
+        grid-template-columns: 1fr;
+    }
+
+    .encabezado {
+        padding: var(--espacio);
+    }
+
+    /* Aparece el botón hamburguesa */
+    .boton-menu {
+        display: block;
+    }
+
+    /* El menú se oculta y, cuando se muestra, va en columna
+       ocupando todo el ancho debajo del título */
+    .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* JavaScript agrega la clase .abierto al pulsar ☰ */
+    .menu.abierto {
+        display: flex;
+    }
+
+    main section,
+    main article,
+    aside,
+    details {
+        padding: var(--espacio);
+    }
+}
+
+/* Celulares pequeños (480px o menos) */
+@media (max-width: 480px) {
+    .marca h1 {
+        font-size: 1.25rem;
+    }
+
+    .marca p {
+        font-size: 0.85rem;
+    }
+
+    .boton-tema {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    main,
+    .portada {
+        padding: var(--espacio) 0.5rem;
+    }
+
+    /* Buscador y select uno debajo del otro */
+    .filtros {
+        flex-direction: column;
+    }
+
+    /* Una sola tarjeta por fila */
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    /* El botón ocupa todo el ancho para tocarlo fácil con el dedo */
+    .boton {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    th,
+    td {
+        padding: 0.4rem;
+        font-size: 0.9rem;
+    }
+}
