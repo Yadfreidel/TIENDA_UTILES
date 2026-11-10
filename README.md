@@ -1,17 +1,70 @@
 # Tienda de Útiles Escolares
 
-Proyecto académico de la asignatura **ISW-311 Tecnologías de Internet I**. Es el sitio de una tienda de útiles escolares con tres páginas: una portada, un catálogo con buscador y un formulario de contacto que se valida con JavaScript. No realiza ventas y no envía ni guarda los datos del formulario. Los precios son de referencia.
+Proyecto académico de **ISW-311 Tecnologías de Internet I**. Es una tienda de útiles escolares (cuadernos, lápices, borradores, sacapuntas, mochilas y reglas) pensada para estudiantes y sus familias. El sitio tiene tres páginas: una portada, un catálogo con buscador y filtro por categoría, y un formulario de contacto que se valida con JavaScript. No realiza ventas y no envía ni guarda los datos del formulario. Los precios son de referencia.
 
-El sitio usa solo **HTML, CSS y JavaScript puros**, sin frameworks ni librerías. No hay que instalar ni compilar nada: basta con abrir `index.html` en el navegador.
+Está hecho con **HTML, CSS y JavaScript puros**, sin frameworks ni librerías.
 
-## Enlaces
+**Sitio publicado:** https://yadfreidel.github.io/TIENDA_UTILES/
+**Repositorio:** https://github.com/Yadfreidel/TIENDA_UTILES
+**Autora:** Yadfreidel Victoria Lugo · Matrícula 2023-4137
 
-- **Sitio publicado:** pendiente. Cuando se active GitHub Pages, la dirección debería ser `https://yadfreidel.github.io/TIENDA_UTILES/`.
-- **Repositorio:** https://github.com/Yadfreidel/TIENDA_UTILES
+## Capturas
 
-## Autora
+| Portada en escritorio | Catálogo en escritorio |
+| --- | --- |
+| ![Portada con el main y el aside en dos columnas](docs/capturas/inicio-escritorio.png) | ![Catálogo con buscador, filtro y seis tarjetas](docs/capturas/catalogo-escritorio.png) |
 
-Yadfreidel Victoria Lugo · Matrícula 2023-4137 · [yafre2310@gmail.com](mailto:yafre2310@gmail.com)
+| Contacto: formulario con errores | Portada en móvil (360 px) con el menú abierto | Catálogo en modo oscuro |
+| --- | --- | --- |
+| ![Formulario con mensajes de error en rojo](docs/capturas/formulario-errores.png) | ![Portada en móvil con el menú hamburguesa abierto](docs/capturas/movil-menu-abierto.png) | ![Catálogo en modo oscuro](docs/capturas/modo-oscuro.png) |
+
+## Mapa de etiquetas
+
+| Familia | Página y sección | Etiquetas usadas | ¿Por qué esa etiqueta? |
+| --- | --- | --- | --- |
+| 1. Cimientos | Las tres páginas (y `guia.html`), dentro del `head` | `<!DOCTYPE html>`, `html lang="es"`, `head`, `meta charset="UTF-8"`, `meta name="viewport"`, `meta name="description"`, `title`, `link rel="stylesheet"`, `script defer`, `body` | <!-- REVISAR --> Pongo `lang="es"` porque el sitio está en español. El `viewport` hace que se vea bien en el celular. Uso `defer` para que el script se ejecute cuando el HTML ya cargó. |
+| 2. Semántica y estructura | Las tres páginas | `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`, `div`, `span` | <!-- REVISAR --> Cada etiqueta dice qué es esa parte: el `nav` es el menú y el `aside` (en Inicio) es información aparte. Uso `article` para la «Novedad del proyecto» y para cada tarjeta, porque se entienden solos. Uso `div` solo para el diseño (portada, filtros, tarjetas, galería, tabla) y `span` para el año y los errores. |
+| 3. Encabezados | Las tres páginas | `h1`, `h2`, `h3` | <!-- REVISAR --> Hay un solo `h1` por página, en el header. Cada sección empieza con `h2`, y los subtítulos de Servicios y las tarjetas usan `h3`. No salto niveles. |
+| 4. Texto y citas | Inicio («Sobre el proyecto», «Qué ofrecemos», «Novedad del proyecto», aside), Contacto («Acerca del contacto») y el footer | `strong`, `em`, `mark`, `abbr`, `small`, `q`, `code`, `kbd`, `blockquote cite`, `cite`, `time datetime`, `address`, `details`, `summary` | <!-- REVISAR --> Con `strong` y `mark` destaco lo importante, y `abbr` explica la sigla HTML. Uso `q` para el lema y `blockquote` con `cite` para la cita del estándar. `time` lleva la fecha en formato que entiende la computadora, y `address` agrupa los datos de contacto. `details` esconde una pregunta frecuente. |
+| 5. Listas | Servicios («Organiza tu solicitud») y `guia.html` | `ul` con una sublista `ul` dentro de un `li`, `ol type="a"`, `li`, `dl`, `dt`, `dd` | <!-- REVISAR --> La sublista agrupa los útiles de escritura dentro de su categoría. El `ol type="a"` numera los pasos con letras porque el orden importa. El `dl` define tres palabras del catálogo. |
+| 6. Enlaces | Menú de las tres páginas, Inicio («Novedad del proyecto» y aside) y Contacto («Acerca del contacto») | `a` interno entre páginas, externo con `target="_blank" rel="noopener"`, `mailto:`, `tel:`, `#solicitud` y `download` | <!-- REVISAR --> El enlace externo abre en otra pestaña y avisa en el texto. `rel="noopener"` es por seguridad. `mailto:` y `tel:` abren el correo y el teléfono. `#solicitud` baja directo al formulario y `download` descarga `catalogo.txt`. |
+| 7. Multimedia | Inicio («Sobre el proyecto»), Servicios («Materiales para tus clases», tarjetas, «Guía visual de estudio») | `img` con `alt`, `width` y `height`, `figure`, `figcaption`, `iframe title` | <!-- REVISAR --> Todas las imágenes tienen `alt` para quien no puede verlas. `figure` y `figcaption` unen la imagen con su explicación. El `iframe` tiene `title` para que el lector de pantalla diga qué muestra. **Pendiente:** no hay `audio` ni `video`. |
+| 8. Tablas | Servicios («Usos de los productos») | `table`, `caption`, `thead`, `tbody`, `tfoot`, `tr`, `th scope="col"`, `th scope="row"`, `td`, `rowspan="4"`, `colspan="3"` | <!-- REVISAR --> La tabla relaciona producto, uso, precio y área. `scope` dice si el encabezado es de columna o de fila. `rowspan="4"` une cuatro productos del mismo área y `colspan="3"` estira la nota del pie. |
+| 9. Formularios | Contacto («Practica una solicitud») | `form novalidate`, 2 `fieldset` con `legend`, `label for` + `id`, `input` de 9 tipos (`text`, `email`, `tel`, `number`, `date`, `time`, `file`, `radio`, `checkbox`), `select` con `optgroup` y `option`, `textarea`, `button type="submit"`, `required`, `minlength`, `min`, `max`, `pattern`, `span.error` + `aria-describedby` | <!-- REVISAR --> Cada `label` está unido a su campo con `for` e `id`. Los atributos `required`, `minlength`, `min`, `max` y `pattern` dicen las reglas en el HTML. Uso `novalidate` para que mis mensajes de JavaScript reemplacen a los del navegador. Cada error sale en un `span` enlazado con `aria-describedby`. |
+
+## Funcionalidades de JavaScript
+
+Todo está en `js/app.js`. Cada parte revisa con `if (elemento)` que su elemento exista, así el mismo archivo sirve en todas las páginas sin errores en la consola.
+
+| Funcionalidad | Página | Evento | Función principal |
+| --- | --- | --- | --- |
+| Menú hamburguesa: abre y cierra el menú y cambia `aria-expanded` | Las tres | `click` en `#boton-menu` | `alternarMenu()` |
+| Modo oscuro: pone o quita la clase `oscuro` y lo guarda en `localStorage` | Las tres | `click` en `#boton-tema` | `alternarTema()` y `actualizarTextoBotonTema()` |
+| Aplicar el tema guardado al abrir la página | Las tres y `guia.html` | Carga del script | `localStorage.getItem("tema")` |
+| Año automático en el footer (`#anio`) | Las tres | Carga del script | `new Date().getFullYear()` |
+| Detalle propio: botón «volver arriba» que aparece después de bajar 300 px | Las tres | `scroll` | `revisarScroll()` |
+| Detalle propio: subir suavemente al inicio | Las tres | `click` en `#boton-arriba` | `volverArriba()` |
+| Pintar las tarjetas desde el arreglo `productos` (6 objetos) | Servicios | Carga del script | `pintarTarjetas(lista)` |
+| Formato de moneda en pesos dominicanos (`es-DO`, `DOP`) | Servicios | Al pintar cada tarjeta | `formatearPrecio(precio)` |
+| Buscador por nombre | Servicios | `input` en `#buscador` | `filtrarProductos()` |
+| Filtro por categoría | Servicios | `change` en `#filtro-categoria` | `filtrarProductos()` |
+| Contador «Mostrando X de Y productos» | Servicios | `input` y `change` | `filtrarProductos()` |
+| Mensaje cuando no hay resultados (`#sin-resultados`) | Servicios | `input` y `change` | `filtrarProductos()` |
+| Validar el formulario sin recargar la página | Contacto | `submit` | `validarFormulario(event)` |
+| Regla: nombre obligatorio, de 3 letras o más | Contacto | `submit` | `validarFormulario()` → `mostrarError()` |
+| Regla: correo con formato válido | Contacto | `submit` | `validarFormulario()` con `patronCorreo` |
+| Regla propia: la confirmación debe ser igual al correo | Contacto | `submit` | `validarFormulario()` |
+| Regla propia: teléfono dominicano (809, 829 u 849 + 7 dígitos) | Contacto | `submit` | `validarFormulario()` con `patronTelefono` |
+| Regla: elegir un producto | Contacto | `submit` | `validarFormulario()` |
+| Regla propia: cantidad entre 1 y 50 si se escribe | Contacto | `submit` | `validarFormulario()` |
+| Regla propia: la fecha no puede ser pasada | Contacto | `submit` | `esFechaPasada(textoFecha)` |
+| Borrar el error cuando se corrige el campo | Contacto | `input` en cada campo validado | `limpiarError(campo)` |
+| Resumen de éxito y formulario vacío | Contacto | `submit` sin errores | `mostrarExito()` y `agregarDato()` |
+
+## Cómo ejecutarlo
+
+- Visita el sitio publicado: https://yadfreidel.github.io/TIENDA_UTILES/
+- O descarga el repositorio y abre `index.html` con la extensión **Live Server** de VS Code (o con doble clic en el navegador). No hay que instalar ni compilar nada.
 
 ## Estructura de archivos
 
@@ -27,81 +80,3 @@ TIENDA_UTILES/
 ├── imagenes/         Ilustraciones SVG de los productos
 └── docs/capturas/    Capturas de pantalla para este README
 ```
-
-## Capturas
-
-| Portada en escritorio | Catálogo en escritorio |
-| --- | --- |
-| ![Portada con el main y el aside en dos columnas](docs/capturas/inicio-escritorio.png) | ![Catálogo con buscador, filtro y seis tarjetas](docs/capturas/catalogo-escritorio.png) |
-
-| Formulario con errores | Móvil (360 px) con el menú abierto | Modo oscuro |
-| --- | --- | --- |
-| ![Formulario con mensajes de error en rojo](docs/capturas/formulario-errores.png) | ![Portada en móvil con el menú hamburguesa abierto](docs/capturas/movil-menu-abierto.png) | ![Catálogo en modo oscuro](docs/capturas/modo-oscuro.png) |
-
-## Las 9 familias de etiquetas HTML
-
-| Familia | Página y sección | Etiquetas usadas | ¿Por qué esa etiqueta? |
-| --- | --- | --- | --- |
-| Cimientos | Las tres páginas, estructura inicial | DOCTYPE, `html`, `head`, `meta`, `title`, `link`, `script`, `body` | Indican el idioma, el título y la descripción, y enlazan la hoja de estilos y el script (con `defer`). |
-| Encabezados y párrafos | Todas las páginas | `h1`, `h2`, `h3`, `p` | Un solo `h1` por página y secciones con `h2` y `h3`, sin saltos de nivel. |
-| Texto, citas y código | Inicio y pie de página | `strong`, `em`, `mark`, `abbr`, `small`, `q`, `code`, `kbd`, `blockquote`, `cite` | Destacan ideas, explican una sigla, marcan una tecla y separan una cita de mi propio texto. Son 9 etiquetas. |
-| Listas | Catálogo | `ul` con sublista dentro de un `li`, `ol type="a"`, `li`, `dl`, `dt`, `dd` | Agrupan los productos, ordenan los pasos con letras y definen tres palabras del tema. |
-| Enlaces | Menú, inicio y contacto | `a` | Navegan entre páginas. El enlace externo usa `target="_blank"` y `rel="noopener"`. También hay enlaces `mailto:`, `tel:`, uno interno a `#solicitud` y uno con `download`. |
-| Imágenes y multimedia | Inicio y catálogo | `img`, `figure`, `figcaption`, `iframe` | Muestran los útiles con texto alternativo y una explicación, y la guía dentro de un marco con `title`. **Pendiente:** audio o video con `controls` y `source`. |
-| Tablas | Catálogo, usos de los productos | `table`, `caption`, `thead`, `tbody`, `tfoot`, `tr`, `th`, `td` | Relacionan productos, usos, precios y áreas. `scope` identifica los encabezados, `rowspan="4"` reúne cuatro áreas iguales y `colspan="3"` extiende la nota final. |
-| Formularios | Contacto, solicitud | `form`, `fieldset`, `legend`, `label`, `input` (9 tipos), `select`, `optgroup`, `option`, `textarea`, `button` | Agrupan los datos en dos `fieldset`. Usan `required`, `minlength`, `min`, `max` y `pattern`, y cada error se muestra en un `span` enlazado con `aria-describedby`. |
-| Semántica y div/span | Las tres páginas | `header`, `nav`, `main`, `footer`, `section`, `article`, `aside`, `time`, `details`, `summary`, `address`, `div`, `span` | Las etiquetas semánticas dicen qué función tiene cada parte. `div` agrupa elementos solo para el diseño (portada, filtros, tarjetas, tabla). `span` marca el año y los mensajes de error. |
-
-## CSS (`css/estilos.css`)
-
-| Tema | Cómo se resolvió |
-| --- | --- |
-| Variables | 22 variables en `:root` (colores, fuente, espacios, radio y sombra) usadas con `var()`. |
-| Header y menú | Flexbox con `justify-content`, `align-items` y `gap`. |
-| Catálogo | Buscador y categoría en Grid `2fr 1fr`. Tarjetas en Grid con `repeat(auto-fill, minmax(220px, 1fr))`, todas de la misma altura, con imágenes del mismo tamaño (`object-fit: contain`) y el precio al final. |
-| Ancho | Contenido de hasta 1400 px, centrado, con 32 px de margen lateral. La sección «Materiales para tus clases» es una galería en Grid con imágenes de 180 px de alto. |
-| Portada | Grid de dos columnas (`2fr 1fr`) para `main` y `aside`. El footer queda siempre abajo porque el `body` es una columna flex. |
-| Diseño adaptable | Media queries de 768 px (menú hamburguesa y una columna) y 480 px (una tarjeta por fila). No hay scroll horizontal a 360 px. |
-| Estados | `:hover`, `:focus-visible`, `:nth-child(even)`, `::after` y 5 `transition`. |
-| Modo oscuro | `body.oscuro` solo cambia los valores de las variables. |
-| Reglas propias | No se usa `!important` ni ninguna regla con `#id`. |
-
-## Funcionalidades de JavaScript (`js/app.js`)
-
-| Funcionalidad | Página | Evento | Función principal |
-| --- | --- | --- | --- |
-| Abrir y cerrar el menú hamburguesa | Las tres | `click` | `alternarMenu()` |
-| Cambiar entre modo claro y oscuro (se guarda en `localStorage`) | Las tres | `click` | `alternarTema()` |
-| Aplicar el tema guardado al abrir la página | Todas, incluida `guia.html` | Carga del script | `localStorage.getItem("tema")` |
-| Año automático en el footer | Las tres | Carga del script | `new Date().getFullYear()` |
-| Mostrar el botón «volver arriba» | Las tres | `scroll` | `revisarScroll()` |
-| Subir al inicio de la página | Las tres | `click` | `volverArriba()` |
-| Dibujar las tarjetas de los 6 productos | Servicios | Carga del script | `pintarTarjetas()` |
-| Buscar por nombre | Servicios | `input` | `filtrarProductos()` |
-| Filtrar por categoría | Servicios | `change` | `filtrarProductos()` |
-| Validar el formulario | Contacto | `submit` | `validarFormulario()` |
-| Borrar el error cuando se corrige un campo | Contacto | `input` | `limpiarError()` |
-| Mostrar el resumen de éxito y vaciar el formulario | Contacto | `submit` (si no hay errores) | `mostrarExito()` |
-
-Reglas propias de la validación: teléfono dominicano (809, 829 u 849 + 7 dígitos), confirmación de correo, fecha que no sea pasada y cantidad entre 1 y 50 si se escribe.
-
-## Pendientes reales
-
-- Agregar un audio o video con `controls` y `source` (familia «Imágenes y multimedia»).
-- Activar GitHub Pages y poner aquí el enlace real del sitio.
-- Pasar las tres páginas por https://validator.w3.org/ (**Validate by File Upload**) y corregir cualquier error.
-
-## Cómo publicar en GitHub Pages
-
-1. En el repositorio, abre **Settings → Pages**.
-2. En **Source** elige **Deploy from a branch**, la rama `master` y la carpeta raíz `/`, y pulsa **Save**.
-3. Espera a que termine el despliegue y copia la dirección que muestre GitHub.
-4. Abre Inicio, Servicios y Contacto desde esa dirección y revisa imágenes, guía, descarga, formulario y modo oscuro, también en el celular.
-
-Referencia: [documentación oficial de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
-
-## Preguntas para practicar
-
-- HTML: ¿qué diferencia hay entre `section` y `article`? ¿Para qué sirve `datetime` en `time`? ¿Qué diferencia hay entre `rowspan` y `colspan`?
-- CSS: ¿por qué el modo oscuro solo cambia variables? ¿Qué hace `repeat(auto-fit, minmax(220px, 1fr))`? ¿Por qué las media queries van al final?
-- JavaScript: ¿qué hace `classList.toggle()`? ¿Para qué sirve `event.preventDefault()`? ¿Qué diferencia hay entre `forEach` y `filter`? ¿Por qué cada parte va dentro de un `if`?
