@@ -5,57 +5,71 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Inicio | Tienda de Útiles Escolares</title>
         <meta name="description" content="Proyecto académico de útiles escolares dirigido a estudiantes y sus familias.">
+        <link rel="stylesheet" href="css/estilos.css">
+        <script src="js/app.js" defer></script>
     </head>
     <body>
-        <header>
-            <h1>Tienda de Útiles Escolares</h1>
-            <p>Útiles para el día a día en clase · Proyecto académico</p>
-            <nav aria-label="Menú principal">
+        <header class="encabezado">
+            <div class="marca">
+                <h1>Tienda de Útiles Escolares</h1>
+                <p>Útiles para el día a día en clase · Proyecto académico</p>
+            </div>
+            <div class="botones-encabezado">
+                <button type="button" class="boton-tema" id="boton-tema">🌙 Modo oscuro</button>
+                <button type="button" class="boton-menu" id="boton-menu" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir o cerrar el menú">☰</button>
+            </div>
+            <nav class="menu" id="menu-principal" aria-label="Menú principal">
                 <a href="index.html" aria-current="page">Inicio</a>
                 <a href="servicios.html">Servicios</a>
                 <a href="contacto.html">Contacto</a>
             </nav>
         </header>
-        <main>
-            <section>
-                <h2>Sobre el proyecto</h2>
-                <p>Una <strong>propuesta de tienda de útiles escolares</strong> para estudiantes y familias que preparan sus materiales de clase.</p>
-                <p>Aprendemos <abbr title="Lenguaje de Marcado de Hipertexto">HTML</abbr> con una idea sencilla: <q>Útiles para el día a día en clase</q>, nuestro lema del proyecto.</p>
-                <a href="servicios.html">Explorar el catálogo</a>
-                <figure>
-                    <img src="imagenes/cuadernos.svg" alt="Ilustración de un cuaderno azul con líneas blancas" width="360" height="250">
-                    <figcaption>Materiales para organizar tus ideas. Ilustración del proyecto.</figcaption>
-                </figure>
-            </section>
-            <section>
-                <h2>Qué ofrecemos</h2>
-                <p>Cuadernos, lápices, borradores, mochilas y reglas para escribir, organizar y medir.</p>
-                <p>Esta es una <em>idea académica</em>. No hay precios ni disponibilidad confirmados.</p>
-            </section>
-            <article>
-                <h2>Novedad del proyecto</h2>
-                <p>El <time datetime="2026-11-03">3 de noviembre de 2026</time> incorporamos un catálogo y un formulario de demostración.</p>
-                <p>La portada se guarda en <code>index.html</code> y comparte sus estilos con las otras páginas.</p>
-                <blockquote cite="https://html.spec.whatwg.org/multipage/introduction.html#background">
-                    <p lang="en">HTML is the World Wide Web's core markup language.</p>
-                </blockquote>
-                <p>Fuente: <cite>
-                        <a href="https://html.spec.whatwg.org/multipage/introduction.html#background">HTML Living Standard, sección Background</a>
-                    </cite>. La cita explica el papel de HTML como lenguaje de marcado de la Web.</p>
-            </article>
+        <div class="portada">
+            <main>
+                <section>
+                    <h2>Sobre el proyecto</h2>
+                    <p>Una <strong>propuesta de tienda de útiles escolares</strong> para estudiantes y familias que preparan sus materiales de clase.</p>
+                    <p>Aprendemos <abbr title="Lenguaje de Marcado de Hipertexto">HTML</abbr> con una idea sencilla: <q>Útiles para el día a día en clase</q>, nuestro lema del proyecto.</p>
+                    <a href="servicios.html" class="boton">Explorar el catálogo</a>
+                    <figure>
+                        <img src="imagenes/cuadernos.svg" alt="Ilustración de un cuaderno azul con líneas blancas" width="360" height="250">
+                        <figcaption>Materiales para organizar tus ideas. Ilustración del proyecto.</figcaption>
+                    </figure>
+                </section>
+                <section>
+                    <h2>Qué ofrecemos</h2>
+                    <p>Cuadernos, lápices, borradores, sacapuntas, mochilas y reglas para escribir, organizar y medir.</p>
+                    <p>Esta es una <em>idea académica</em>. Los precios son de referencia y no hay disponibilidad confirmada.</p>
+                </section>
+                <article>
+                    <h2>Novedad del proyecto</h2>
+                    <p>El <time datetime="2026-11-03">3 de noviembre de 2026</time> incorporamos un catálogo y un formulario de demostración.</p>
+                    <p>La portada se guarda en <code>index.html</code> y comparte sus estilos con las otras páginas.</p>
+                    <blockquote cite="https://html.spec.whatwg.org/multipage/introduction.html#background">
+                        <p lang="en">HTML is the World Wide Web's core markup language.</p>
+                    </blockquote>
+                    <p>Fuente: <cite>
+                            <a href="https://html.spec.whatwg.org/multipage/introduction.html#background">HTML Living Standard, sección Background</a>
+                        </cite>. La cita explica el papel de HTML como lenguaje de marcado de la Web.</p>
+                </article>
+                <details>
+                    <summary>¿Puedo comprar desde esta página?</summary>
+                    <p>Por ahora no. El catálogo y el formulario sirven para aprender HTML, CSS y JavaScript.</p>
+                </details>
+            </main>
             <aside>
                 <h2>Información importante</h2>
                 <p>Este sitio <mark>todavía no realiza ventas</mark>. Puedes usar <kbd>Tab</kbd> para recorrer los enlaces y campos.</p>
+                <address>
+                    Escríbenos a <a href="mailto:yafre2310@gmail.com">yafre2310@gmail.com</a>
+                </address>
             </aside>
-            <details>
-                <summary>¿Puedo comprar desde esta página?</summary>
-                <p>Por ahora no. El catálogo y el formulario sirven para aprender HTML.</p>
-            </details>
-        </main>
+        </div>
         <footer>
             <p>
-                <small>Yadfreidel Victoria Lugo | Matrícula: 2023-4137.</small>
+                <small>Yadfreidel Victoria Lugo | Matrícula: 2023-4137 | © <span id="anio">2026</span></small>
             </p>
         </footer>
+        <button type="button" class="boton-arriba" id="boton-arriba" aria-label="Volver arriba">↑</button>
     </body>
 </html>

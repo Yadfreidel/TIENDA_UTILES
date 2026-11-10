@@ -1,10 +1,11 @@
 Tienda de Útiles Escolares
 Proyecto académico de Yadfreidel Victoria Lugo | Matrícula: 2023-4137
 
-Cuadernos: Sirven para tomar apuntes y organizar ideas.
-Lápices: Se utilizan para escribir y dibujar con grafito.
-Borradores: Permiten corregir trazos de lápiz.
-Mochilas: Ayudan a transportar los materiales de clase.
-Reglas: Sirven para medir y trazar líneas rectas.
+Cuadernos (RD$ 85): Sirven para tomar apuntes y organizar ideas.
+Lápices (RD$ 15): Se utilizan para escribir y dibujar con grafito.
+Borradores (RD$ 10): Permiten corregir trazos de lápiz.
+Sacapuntas (RD$ 25): Afilan la punta de los lápices.
+Mochilas (RD$ 1,250): Ayudan a transportar los materiales de clase.
+Reglas (RD$ 35): Sirven para medir y trazar líneas rectas.
 
-Sin precios ni disponibilidad confirmados. No se realizan ventas.
+Precios de referencia para el proyecto. No se realizan ventas.

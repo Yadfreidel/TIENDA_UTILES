@@ -5,12 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contacto y solicitud | Tienda de Útiles Escolares</title>
         <meta name="description" content="Formulario académico para practicar una consulta sobre útiles escolares sin enviar ni almacenar datos.">
+        <link rel="stylesheet" href="css/estilos.css">
+        <script src="js/app.js" defer></script>
     </head>
     <body>
-        <header>
-            <h1>Contacto y solicitud</h1>
-            <p>Útiles para el día a día en clase · Proyecto académico</p>
-            <nav aria-label="Menú principal">
+        <header class="encabezado">
+            <div class="marca">
+                <h1>Contacto y solicitud</h1>
+                <p>Útiles para el día a día en clase · Proyecto académico</p>
+            </div>
+            <div class="botones-encabezado">
+                <button type="button" class="boton-tema" id="boton-tema">🌙 Modo oscuro</button>
+                <button type="button" class="boton-menu" id="boton-menu" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir o cerrar el menú">☰</button>
+            </div>
+            <nav class="menu" id="menu-principal" aria-label="Menú principal">
                 <a href="index.html">Inicio</a>
                 <a href="servicios.html">Servicios</a>
                 <a href="contacto.html" aria-current="page">Contacto</a>
@@ -32,36 +40,45 @@
             </section>
             <section id="solicitud">
                 <h2>Practica una solicitud</h2>
-                <p id="aviso">Demostración académica sin validaciones. El botón está desactivado porque el sitio no envía ni almacena datos. Usa datos de prueba y no adjuntes documentos personales.</p>
-                <form novalidate aria-describedby="aviso">
+                <p id="aviso">Demostración académica: JavaScript revisa los datos en tu navegador, pero el sitio no envía ni almacena nada. Usa datos de prueba y no adjuntes documentos personales. Los campos con asterisco (*) son obligatorios.</p>
+                <form id="formulario" novalidate aria-describedby="aviso">
                     <fieldset>
                         <legend>Datos para la consulta</legend>
-                        <label for="nombre">Nombre de prueba</label>
-                        <input type="text" id="nombre" name="nombre">
-                        <label for="correo">Correo de prueba</label>
-                        <input type="email" id="correo" name="correo">
-                        <label for="telefono">Teléfono de prueba</label>
-                        <input type="tel" id="telefono" name="telefono">
+                        <label for="nombre" class="requerido">Nombre de prueba</label>
+                        <input type="text" id="nombre" name="nombre" required aria-describedby="error-nombre">
+                        <span class="error" id="error-nombre"></span>
+                        <label for="correo" class="requerido">Correo de prueba</label>
+                        <input type="email" id="correo" name="correo" required aria-describedby="error-correo">
+                        <span class="error" id="error-correo"></span>
+                        <label for="confirmar-correo" class="requerido">Confirma tu correo</label>
+                        <input type="email" id="confirmar-correo" name="confirmar-correo" required aria-describedby="error-confirmar-correo">
+                        <span class="error" id="error-confirmar-correo"></span>
+                        <label for="telefono" class="requerido">Teléfono de prueba (809, 829 u 849 y 7 dígitos)</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="8091234567" required aria-describedby="error-telefono">
+                        <span class="error" id="error-telefono"></span>
                     </fieldset>
                     <fieldset>
                         <legend>Útiles que necesitas</legend>
-                        <label for="producto">Producto</label>
-                        <select id="producto" name="producto">
+                        <label for="producto" class="requerido">Producto</label>
+                        <select id="producto" name="producto" required aria-describedby="error-producto">
                             <option value="">Selecciona un producto</option>
                             <optgroup label="Escritura">
                                 <option value="cuaderno">Cuaderno</option>
                                 <option value="lapiz">Lápiz</option>
                                 <option value="borrador">Borrador</option>
+                                <option value="sacapuntas">Sacapuntas</option>
                             </optgroup>
                             <optgroup label="Organización y medición">
                                 <option value="mochila">Mochila</option>
                                 <option value="regla">Regla</option>
                             </optgroup>
                         </select>
+                        <span class="error" id="error-producto"></span>
                         <label for="cantidad">Cantidad para la consulta</label>
                         <input type="number" id="cantidad" name="cantidad">
-                        <label for="fecha">Fecha deseada para preparar tus materiales</label>
-                        <input type="date" id="fecha" name="fecha">
+                        <label for="fecha" class="requerido">Fecha deseada para preparar tus materiales</label>
+                        <input type="date" id="fecha" name="fecha" required aria-describedby="error-fecha">
+                        <span class="error" id="error-fecha"></span>
                         <label for="hora">Hora deseada</label>
                         <input type="time" id="hora" name="hora">
                         <label for="archivo">Lista escolar de prueba</label>
@@ -76,21 +93,22 @@
                             <label for="organizacion">Organización de materiales</label>
                         </p>
                         <label for="mensaje">Describe tu consulta</label>
-                        <textarea id="mensaje" name="mensaje" rows="4">
-                        </textarea>
+                        <textarea id="mensaje" name="mensaje" rows="4"></textarea>
                         <p>
                             <input type="checkbox" id="demostracion" name="demostracion">
                             <label for="demostracion">Entiendo que esta es una demostración académica.</label>
                         </p>
                     </fieldset>
-                    <button type="submit" disabled>Enviar (demostración)</button>
+                    <button type="submit" class="boton">Enviar (demostración)</button>
                 </form>
+                <div class="mensaje-exito" id="mensaje-exito" aria-live="polite"></div>
             </section>
         </main>
         <footer>
             <p>
-                <small>Yadfreidel Victoria Lugo | Matrícula: 2023-4137.</small>
+                <small>Yadfreidel Victoria Lugo | Matrícula: 2023-4137 | © <span id="anio">2026</span></small>
             </p>
         </footer>
+        <button type="button" class="boton-arriba" id="boton-arriba" aria-label="Volver arriba">↑</button>
     </body>
 </html>

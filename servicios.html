@@ -4,19 +4,48 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Catálogo de útiles | Tienda de Útiles Escolares</title>
-        <meta name="description" content="Catálogo educativo de cinco útiles escolares, sus usos y una guía para solicitar información.">
+        <meta name="description" content="Catálogo educativo de seis útiles escolares con precios de referencia, sus usos y una guía para solicitar información.">
+        <link rel="stylesheet" href="css/estilos.css">
+        <script src="js/app.js" defer></script>
     </head>
     <body>
-        <header>
-            <h1>Catálogo de útiles</h1>
-            <p>Útiles para el día a día en clase · Proyecto académico</p>
-            <nav aria-label="Menú principal">
+        <header class="encabezado">
+            <div class="marca">
+                <h1>Catálogo de útiles</h1>
+                <p>Útiles para el día a día en clase · Proyecto académico</p>
+            </div>
+            <div class="botones-encabezado">
+                <button type="button" class="boton-tema" id="boton-tema">🌙 Modo oscuro</button>
+                <button type="button" class="boton-menu" id="boton-menu" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir o cerrar el menú">☰</button>
+            </div>
+            <nav class="menu" id="menu-principal" aria-label="Menú principal">
                 <a href="index.html">Inicio</a>
                 <a href="servicios.html" aria-current="page">Servicios</a>
                 <a href="contacto.html">Contacto</a>
             </nav>
         </header>
         <main>
+            <section>
+                <h2>Busca tus útiles</h2>
+                <div class="filtros">
+                    <p class="filtro">
+                        <label for="buscador">Buscar por nombre</label>
+                        <input type="search" id="buscador" name="buscador" placeholder="Ejemplo: cuaderno">
+                    </p>
+                    <p class="filtro">
+                        <label for="filtro-categoria">Categoría</label>
+                        <select id="filtro-categoria" name="filtro-categoria">
+                            <option value="todas">Todas las categorías</option>
+                            <option value="Escritura y corrección">Escritura y corrección</option>
+                            <option value="Organización">Organización</option>
+                            <option value="Medición">Medición</option>
+                        </select>
+                    </p>
+                </div>
+                <p class="contador" id="contador" aria-live="polite"></p>
+                <p class="sin-resultados" id="sin-resultados" hidden>No encontramos productos con esa búsqueda. Prueba con otra palabra o elige «Todas las categorías».</p>
+                <div class="tarjetas" id="tarjetas"></div>
+            </section>
             <section>
                 <h2>Materiales para tus clases</h2>
                 <p>Ilustraciones orientativas creadas para esta tarea; no representan modelos comerciales ni existencias.</p>
@@ -35,6 +64,7 @@
                     <li>Escritura y corrección<ul>
                             <li>Lápices</li>
                             <li>Borradores</li>
+                            <li>Sacapuntas</li>
                         </ul>
                     </li>
                     <li>Apuntes: cuadernos</li>
@@ -59,12 +89,14 @@
             </section>
             <section>
                 <h2>Usos de los productos</h2>
+                <div class="tabla-contenedor">
                     <table>
-                        <caption>Cinco útiles y sus funciones generales</caption>
+                        <caption>Seis útiles, sus funciones y precios de referencia</caption>
                         <thead>
                             <tr>
                                 <th scope="col">Producto</th>
                                 <th scope="col">Uso general</th>
+                                <th scope="col">Precio (RD$)</th>
                                 <th scope="col">Área de uso</th>
                             </tr>
                         </thead>
@@ -72,46 +104,57 @@
                             <tr>
                                 <th scope="row">Cuadernos</th>
                                 <td>Tomar apuntes</td>
-                                <td rowspan="3">Escritura y corrección</td>
+                                <td>85</td>
+                                <td rowspan="4">Escritura y corrección</td>
                             </tr>
                             <tr>
                                 <th scope="row">Lápices</th>
                                 <td>Escribir con grafito</td>
+                                <td>15</td>
                             </tr>
                             <tr>
                                 <th scope="row">Borradores</th>
                                 <td>Borrar trazos de lápiz</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sacapuntas</th>
+                                <td>Afilar la punta de los lápices</td>
+                                <td>25</td>
                             </tr>
                             <tr>
                                 <th scope="row">Mochilas</th>
                                 <td>Transportar materiales</td>
+                                <td>1,250</td>
                                 <td>Organización</td>
                             </tr>
                             <tr>
                                 <th scope="row">Reglas</th>
                                 <td>Medir longitudes</td>
+                                <td>35</td>
                                 <td>Medición</td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th scope="row">Nota</th>
-                                <td colspan="2">Sin precios ni disponibilidad confirmados.</td>
+                                <td colspan="3">Precios de referencia para el proyecto. No se realizan ventas.</td>
                             </tr>
                         </tfoot>
                     </table>
+                </div>
             </section>
             <section>
                 <h2>Guía visual de estudio</h2>
                 <p>Este marco muestra una guía local que se puede abrir también <a href="guia.html">en una página independiente</a>.</p>
-                <iframe src="guia.html" title="Guía para preparar los útiles antes de clase" loading="lazy">
-                </iframe>
+                <iframe src="guia.html" title="Guía para preparar los útiles antes de clase" loading="lazy"></iframe>
             </section>
         </main>
         <footer>
             <p>
-                <small>Yadfreidel Victoria Lugo | Matrícula: 2023-4137.</small>
+                <small>Yadfreidel Victoria Lugo | Matrícula: 2023-4137 | © <span id="anio">2026</span></small>
             </p>
         </footer>
+        <button type="button" class="boton-arriba" id="boton-arriba" aria-label="Volver arriba">↑</button>
     </body>
 </html>
